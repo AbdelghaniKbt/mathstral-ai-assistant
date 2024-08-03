@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic-settings
+transformers
+torch
+huggingface_hub
+accelerate
+docker
+aiohttp
+aiofiles

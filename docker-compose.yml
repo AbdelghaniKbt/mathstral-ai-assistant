@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+
+  backend:
+    image: ${IMAGE_PREFIX:-mathstral}-base
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.base
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./models:/models
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LLAMA_URL=http://llama:8080
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  llama:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    platform: linux/arm64
+    volumes:
+      - ./models:/models
+    ports:
+      - "8080:8080"
+    command: -m /models/mathstral-7b-v0.1-q8_0.gguf --port 8080 --host 0.0.0.0 -c 2048 -ngl 1
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+
+volumes:
+  models:

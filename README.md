@@ -33,17 +33,13 @@ Mathstral AI Assistant is a web application that provides an interactive chat in
    cd mathstral-ai-assistant
    ```
 
-2. Create a `.env` file in the root directory and add your Hugging Face token:
-   ```
-   HF_TOKEN=your_hugging_face_token_here
-   ```
 
-3. Build and start the Docker containers:
+2. Build and start the Docker containers:
    ```
    docker-compose up --build
    ```
 
-4. Access the application at `http://localhost:3000`
+3. Access the application at `http://localhost:3000`
 
 ## Usage
 

@@ -1,9 +1,11 @@
-from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
-from app.api.models import GenerateRequest, InitializeRequest, Response, StreamResponse
-from app.services.model_service import model_service
 import json
 import logging
+
+from app.api.models import (GenerateRequest, InitializeRequest, Response,
+                            StreamResponse)
+from app.services.model_service import model_service
+from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -39,7 +41,7 @@ async def initialize(request: InitializeRequest):
             f"Initializing model with serving framework: {request.serving_framework}"
         )
         await model_service.initialize(request.hf_token)
-        logger.info(f"Model initialized successfully")
+        logger.info("Model initialized successfully")
         return Response(message="Model initialized successfully")
     except Exception as e:
         logger.exception(f"Error during model initialization: {str(e)}")

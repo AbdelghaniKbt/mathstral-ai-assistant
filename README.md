@@ -14,7 +14,7 @@ Mathstral AI Assistant is a web application that provides an interactive chat in
   - FastAPI (Python)
   - Llama.cpp (for LLM serving and inference)
 - Frontend:
-  - React (TypeScript) - developed with the help of Claude -. 
+  - React (TypeScript) - developed with the help of Claude -.
   - Material-UI
 - Deployment:
   - Docker

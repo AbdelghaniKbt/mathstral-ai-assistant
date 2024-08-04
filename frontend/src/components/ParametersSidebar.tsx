@@ -25,7 +25,7 @@ const ParametersSidebar: React.FC<ParametersSidebarProps> = ({
   return (
     <Box sx={{ width: 300, p: 2 }}>
       <Typography variant="h6" gutterBottom>Parameters</Typography>
-      
+
       <Typography gutterBottom>Max New Tokens</Typography>
       <Slider
         value={maxNewTokens}

@@ -27,12 +27,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({ onSendMessage, messages }) => {
   };
 
   return (
-    <Paper 
-      elevation={3} 
-      sx={{ 
-        height: '100%', 
-        display: 'flex', 
-        flexDirection: 'column', 
+    <Paper
+      elevation={3}
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
         overflow: 'hidden',
         borderRadius: 2,
         bgcolor: 'background.default'
@@ -75,12 +75,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({ onSendMessage, messages }) => {
         ))}
         <div ref={messagesEndRef} />
       </Box>
-      <Box 
-        component="form" 
-        onSubmit={handleSubmit} 
-        sx={{ 
-          p: 2, 
-          bgcolor: 'background.paper', 
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          p: 2,
+          bgcolor: 'background.paper',
           borderTop: '1px solid',
           borderColor: 'divider'
         }}

@@ -57,8 +57,8 @@ export const initializeModel = async (
 
 export const generateResponse = async (
   input: string,
-  options: { 
-    maxNewTokens: number; 
+  options: {
+    maxNewTokens: number;
     temperature: number;
     topP: number;
     topK: number;
@@ -97,10 +97,10 @@ export const generateResponse = async (
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
-      
+
       const decodedChunk = decoder.decode(value, { stream: true });
       const lines = decodedChunk.split('\n');
-      
+
       for (const line of lines) {
         if (line.startsWith('data: ')) {
           try {

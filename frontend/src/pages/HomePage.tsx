@@ -64,7 +64,7 @@ const HomePage: React.FC<HomePageProps> = ({ toggleMode, mode }) => {
 
     try {
       await initializeModel(
-        hfToken, 
+        hfToken,
         (progress: number, status: string) => {
           setProgress(progress);
           setStatus(status);
@@ -84,19 +84,19 @@ const HomePage: React.FC<HomePageProps> = ({ toggleMode, mode }) => {
   };
 
   return (
-    <Box sx={{ 
+    <Box sx={{
       height: '100vh',
-      display: 'flex', 
-      flexDirection: 'column', 
+      display: 'flex',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
     }}>
-      <Box 
-        sx={{ 
-          position: 'absolute', 
-          top: 20, 
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 20,
           right: 20,
           zIndex: 1,
         }}

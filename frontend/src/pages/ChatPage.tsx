@@ -138,9 +138,9 @@ const ChatPage: React.FC<ChatPageProps> = ({
   };
 
   return (
-    <Box sx={{ 
+    <Box sx={{
       height: '100vh',
-      display: 'flex', 
+      display: 'flex',
       flexDirection: 'column',
       bgcolor: 'background.default',
       position: 'relative',
@@ -158,7 +158,7 @@ const ChatPage: React.FC<ChatPageProps> = ({
           <SettingsIcon />
         </IconButton>
       </Box>
-      
+
       {messages.length === 0 && (
         <Zoom in={true} style={{ transitionDelay: '500ms' }}>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 2, mb: 4 }}>
@@ -167,7 +167,7 @@ const ChatPage: React.FC<ChatPageProps> = ({
                 key={index}
                 label={example}
                 onClick={() => handleSendMessage(example)}
-                sx={{ 
+                sx={{
                   fontSize: '1rem',
                   py: 2,
                   px: 1,
@@ -188,8 +188,8 @@ const ChatPage: React.FC<ChatPageProps> = ({
       <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
         {messages.map((message, index) => (
           <Fade key={index} in={true} timeout={500}>
-            <StyledPaper elevation={3} sx={{ 
-              maxWidth: '70%', 
+            <StyledPaper elevation={3} sx={{
+              maxWidth: '70%',
               ml: message.isUser ? 'auto' : 0,
               mr: message.isUser ? 0 : 'auto',
               bgcolor: message.isUser ? 'primary.light' : 'background.paper',
